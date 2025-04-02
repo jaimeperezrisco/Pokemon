@@ -1,6 +1,20 @@
-public abstract class PokemonAgua extends Pokemon{
+import Interfaz.Ataque;
+
+public class PokemonAgua extends Pokemon{
     //atributos
 
+
+    //constructor
+    public PokemonAgua(){
+        
+    }
+
+    public PokemonAgua(String nombre, int nivel, double vida, double vidaMaxima) {
+        this.nombre = nombre;
+        this.nivel = nivel;
+        this.vida = vida;
+        this.vidaMaxima = vidaMaxima;
+    }
 
     //metodos
     @Override

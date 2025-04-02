@@ -2,16 +2,24 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
 
-        
-            
-            
-        
+        // Tipo Fuego
+        PokemonFuego Charizar = new PokemonFuego();
+        Charizar.sonido();
 
-        //ArrayList<Mundo>listaPokemonMundo =new ArrayList<>();
+        // Tipo Agua
 
-        //ArrayList <Pokemon> listaPokemon = new ArrayList<>();
-        //list.add(charmander)//hay que previmanete crear el pokemon
+        PokemonAgua Squirtle = new PokemonAgua();
+        System.out.println(Squirtle);
+        Squirtle.sonido();
+        // Tipo planta
+
+        PokemonPlanta Bulbasur = new PokemonPlanta();
+        Bulbasur.sonido();
+
+        // ArrayList<Mundo>listaPokemonMundo =new ArrayList<>();
+
+        // ArrayList <Pokemon> listaPokemon = new ArrayList<>();
+        // list.add(charmander)//hay que previmanete crear el pokemon
     }
 }

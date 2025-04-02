@@ -1,4 +1,4 @@
-public abstract class PokemonFuego {
+public class PokemonFuego extends Pokemon{
     //atrbutos
 
 

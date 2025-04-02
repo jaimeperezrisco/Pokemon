@@ -1,4 +1,4 @@
-public abstract class PokemonPlanta {
+public class PokemonPlanta extends Pokemon {
     //atributos
 
 
