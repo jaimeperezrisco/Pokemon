@@ -1,4 +1,3 @@
-import Interfaz.Ataque;
 
 public abstract class Pokemon implements Ataque{
 
@@ -11,6 +10,14 @@ public abstract class Pokemon implements Ataque{
     
     //metodos Revisar el toString
 
+
+   public Pokemon(String nombre, int nivel, double vida, double vidaMaxima, int poderAtaque) {
+        this.nombre = nombre;
+        this.nivel = nivel;
+        this.vida = vida;
+        this.vidaMaxima = vidaMaxima;
+        this.poderAtaque = poderAtaque;
+    }
 
    public String getNombre() {
         return nombre;
@@ -61,10 +68,6 @@ public abstract class Pokemon implements Ataque{
     
    public abstract void sonido();
 
-   @Override
-   public void atacar() {
-
-   }
-
+   
 
 }
