@@ -53,15 +53,18 @@ public class Main {
 
         
 
-        /*
-         * pelea fuego vs planta
-         * System.out.println("Combate entre " + listaPokemon.get(0).getNombre() + " y "
-         * + listaPokemonMundo.get(0).getNombre());
-         * System.out.println(listaPokemon.get(0));
-         * System.out.println(listaPokemonMundo.get(0));
-         * 
-         * listaPokemon.get(0).atacar(listaPokemonMundo.get(0));
-         * 
+        
+         //pelea fuego vs planta
+         System.out.println("Combate entre " + Charizar.getNombre() + " y " + Venusaur.getNombre());
+         System.out.println(Charizar);
+         System.out.println(Venusaur);
+          
+         listaPokemon.get(0).atacar(listaPokemonMundo.get(0));
+         Charizar.atacar(Venusaur);
+         System.out.println(Charizar);
+         System.out.println(Venusaur);
+
+         /* 
          * System.out.println(listaPokemon.get(0));
          * System.out.println(listaPokemonMundo.get(0));
          * 
@@ -93,7 +96,7 @@ public class Main {
         // Captura
         //JaimeKetchup.añadirPokedex(JaimeKetchup, listaPokemon, listaPokemonMundo, 0);
        
-
+        
                 
                 do {
                     Scanner scanner = new Scanner(System.in);
