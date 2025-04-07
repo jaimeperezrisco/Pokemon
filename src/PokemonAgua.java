@@ -12,7 +12,7 @@ public class PokemonAgua extends Pokemon{
     //metodos
     @Override
     public String toString() {
-        return "Soy un pokemon tipo " + getClass().getName() + " soy " + getNombre()+ " mi ataque quita " + getPoderAtaque() + " tengo nivel " + getNivel() + " y me queda " + getVida()  ;
+        return "Soy un pokemon tipo " + getClass().getName() + " soy " + getNombre()+ " mi ataque quita " + getPoderAtaque() + " tengo nivel " + getNivel() + " y me queda " + getVida() + " de vida";
     }
 
     public void sonido() {
@@ -38,8 +38,10 @@ public class PokemonAgua extends Pokemon{
 
         }
             
+        System.out.println(pokemon.toString());
+        pokemon.setVida(pokemon.getVida() - (this.getPoderAtaque() * multiplicador));
+        System.out.println(pokemon.toString());
 
-        pokemon.setVida(pokemon.getVida() - (this.getPoderAtaque() * multiplicador) );
     }
 
 }
