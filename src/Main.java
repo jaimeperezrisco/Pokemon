@@ -1,7 +1,10 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+
+        int opcion;
 
         // Tipo Fuego
         PokemonFuego Charizar = new PokemonFuego("Charizar", 50, 100, 100, 23);
@@ -88,14 +91,45 @@ public class Main {
          * System.out.println(listaPokemonMundo.get(0));
          */
         // Captura
-        JaimeKetchup.añadirPokedex(JaimeKetchup, listaPokemon, listaPokemonMundo, 0);
-        JaimeKetchup.añadirPokedex(JaimeKetchup, listaPokemon, listaPokemonMundo, 1);
-        JaimeKetchup.añadirPokedex(JaimeKetchup, listaPokemon, listaPokemonMundo, 2);
-        JaimeKetchup.añadirPokedex(JaimeKetchup, listaPokemon, listaPokemonMundo,3);
+        //JaimeKetchup.añadirPokedex(JaimeKetchup, listaPokemon, listaPokemonMundo, 0);
+       
 
-        System.out.println(listaPokemon);
+                
+                do {
+                    Scanner scanner = new Scanner(System.in);
+                    System.out.println("Hola JaimeKetchup!!! Que quieres hacer?? "); 
+                    System.out.println("1) Elige un pokemon");
+                    System.out.println("2) Retirar saldo");
+                    System.out.println("0) Salir ");
+                    System.out.print("Inserta una opción: ");
+                    
+                    
+                    opcion = scanner.nextInt();
+        
+                    switch (opcion) {
+                        case 1:
+                            System.out.println("¿¿Que Pokemon quieres seleccionar??");
+                            System.out.println(listaPokemonMundo.getFirst());
+                            break;
+                        case 2:
+                            
+                            break;
+                        case 3:
+                            System.out.println("Saliendo...");
+                            break;
+                        default:
+                            System.out.println("Opción inválida");
+                            break;
+                    }
+                } while (opcion != 0);
 
+
+            
+        
         
     }
 
+        
 }
+
+
