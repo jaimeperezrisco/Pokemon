@@ -33,8 +33,10 @@ public class PokemonFuego extends Pokemon {
             multiplicador = 1.2;
 
         }
+        System.out.println(this.toString());
         System.out.println(pokemon.toString());
         pokemon.setVida(pokemon.getVida() - (this.getPoderAtaque() * multiplicador));
+        System.out.println(this.toString());
         System.out.println(pokemon.toString());
     }
 }

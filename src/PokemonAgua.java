@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class PokemonAgua extends Pokemon{
     //atributos
@@ -38,9 +39,12 @@ public class PokemonAgua extends Pokemon{
 
         }
             
+        System.out.println(this.toString());
         System.out.println(pokemon.toString());
         pokemon.setVida(pokemon.getVida() - (this.getPoderAtaque() * multiplicador));
+        System.out.println(this.toString());
         System.out.println(pokemon.toString());
+        System.out.println();
 
     }
 

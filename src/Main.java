@@ -100,7 +100,7 @@ public class Main {
             System.out.println("2) Atacar");
             System.out.println("3) Capturar");
             System.out.println("0) Escapar");
-          
+
             System.out.print("Inserta una opción: ");
 
             opcion = scanner.nextInt();
@@ -117,7 +117,8 @@ public class Main {
                     seleccion = scanner.nextInt();
                     seleccion = seleccion - 1;
 
-                    System.out.println("Perfecto!!! Has seleccionado a " + listaPokemon.get(seleccion).getNombre() + " para pelear");
+                    System.out.println("Perfecto!!! Has seleccionado a " + listaPokemon.get(seleccion).getNombre()
+                            + " para pelear");
                     break;
                 case 2: // atacar
                     System.out.println("Has seleccionado a " + listaPokemon.get(seleccion).getNombre());
@@ -134,24 +135,32 @@ public class Main {
 
                     System.out.println("Has seleccionado a " + listaPokemonMundo.get(seleccionAtaque).getNombre()
                             + " para que le ataquen");
-                    
-                    listaPokemon.get(seleccion).atacar(listaPokemonMundo.get(seleccionAtaque));
-                
-                    break;
-                case 3: //capturar
-                    System.out.println("A que Pokemon quieres capturar");
 
-                    for (int i = 0; i < listaPokemon.size(); i++) {
-                        System.out.println((i + 1) + " " + (listaPokemon.get(i)));
+                    listaPokemon.get(seleccion).atacar(listaPokemonMundo.get(seleccionAtaque));
+
+                    if (listaPokemonMundo.get(seleccionAtaque).getVida() <= 0) {
+                        System.out.println("Has matado a " + listaPokemonMundo.get(seleccionAtaque).getNombre()
+                                + "!!! y se ha eliminado de la lista");
+                        listaPokemonMundo.remove(seleccionAtaque);
+                    }
+
+                    break;
+                case 3: // capturar
+                    System.out.println(
+                            "A que Pokemon quieres capturar (Cuanta menos vida tenga el pokemon más probabilidades)");
+
+                    for (int i = 0; i < listaPokemonMundo.size(); i++) {
+                        System.out.println((i + 1) + " " + (listaPokemonMundo.get(i)));
 
                     }
                     seleccionCapturar = scanner.nextInt();
                     seleccionCapturar = seleccionCapturar - 1;
 
+                    JaimeKetchup.capturar(listaPokemon, listaPokemonMundo, seleccionCapturar);
 
                     break;
 
-                case 0: //escapar
+                case 0: // escapar
                     System.out.println("Saliendo...");
                     break;
 

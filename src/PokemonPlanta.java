@@ -35,8 +35,11 @@ public class PokemonPlanta extends Pokemon {
             multiplicador = 1.0;
 
         }
+
+        System.out.println(this.toString());
         System.out.println(pokemon.toString());
         pokemon.setVida(pokemon.getVida() - (this.getPoderAtaque() * multiplicador));
+        System.out.println(this.toString());
         System.out.println(pokemon.toString());
     }
 }
