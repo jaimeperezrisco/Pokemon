@@ -28,6 +28,7 @@ public class PokemonPlanta extends Pokemon {
 
         if (pokemon.getClass().getName() == "PokemonAgua") {
             multiplicador = 1.2;
+            System.out.println("El Ataque ha sido MUY efectivo y ha hecho un 20% más de daño");
 
         }
 

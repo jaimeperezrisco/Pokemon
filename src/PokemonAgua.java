@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 
 public class PokemonAgua extends Pokemon{
-    //atributos
-
-
     //constructor
     public PokemonAgua(String nombre, int nivel, double vida, double vidaMaxima, int poderAtaque) {
         super(nombre, nivel, vida, vidaMaxima, poderAtaque);
@@ -26,6 +23,7 @@ public class PokemonAgua extends Pokemon{
 
         if (pokemon.getClass().getName() == "PokemonFuego") {
             multiplicador = 1.2;
+            System.out.println("El Ataque ha sido MUY efectivo y ha hecho un 20% más de daño");
            
         }
         

@@ -122,7 +122,6 @@ public class Main {
                     break;
                 case 2: // atacar
                     System.out.println("Has seleccionado a " + listaPokemon.get(seleccion).getNombre());
-
                     System.out.println("A que Pokemon quieres atacar");
                     System.out.println();
 
@@ -151,6 +150,7 @@ public class Main {
 
                     for (int i = 0; i < listaPokemonMundo.size(); i++) {
                         System.out.println((i + 1) + " " + (listaPokemonMundo.get(i)));
+                        System.out.println();
 
                     }
                     seleccionCapturar = scanner.nextInt();
@@ -167,6 +167,7 @@ public class Main {
                 default:
                     System.out.println("Opción inválida");
                     break;
+
             }
         } while (opcion != 0);
 

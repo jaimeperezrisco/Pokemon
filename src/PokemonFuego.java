@@ -31,7 +31,8 @@ public class PokemonFuego extends Pokemon {
 
         if (pokemon.getClass().getName() == "PokemonPlanta") {
             multiplicador = 1.2;
-
+            System.out.println("El Ataque ha sido MUY efectivo y ha hecho un 20% más de daño");
+            
         }
         System.out.println(this.toString());
         System.out.println(pokemon.toString());
