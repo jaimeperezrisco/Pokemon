@@ -38,8 +38,10 @@ public class PokemonFuego extends Pokemon {
         if (pokemon.getClass().getName() == "PokemonPlanta") {
             multiplicador = 1.2;
             System.out.println("El Ataque ha sido MUY efectivo y ha hecho un 20% más de daño");
-            
+
         }
+        
+        // Mostramos informacion antes y despues de cada ataque y setemos la vida enbase a la vida que le quedaba y daño del pokemon que use el meotodo*multiplicador
         System.out.println(this.toString());
         System.out.println(pokemon.toString());
         pokemon.setVida(pokemon.getVida() - (this.getPoderAtaque() * multiplicador));

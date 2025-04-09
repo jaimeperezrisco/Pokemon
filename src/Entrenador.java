@@ -31,7 +31,7 @@ public class Entrenador {
 
         double probabilidadPokeball = 0.5;
         Pokemon pokemon = listaPokemonMundo.get(index);
-        double probabilidadCaputura = probabilidadPokeball * (pokemon.getVida() / pokemon.getVidaMaxima());
+        double probabilidadCaputura = probabilidadPokeball * (1-pokemon.getVida() / pokemon.getVidaMaxima());
         double numeroAleatorio = Math.random();
 
         if (numeroAleatorio < probabilidadCaputura) {

@@ -42,7 +42,7 @@ public class PokemonPlanta extends Pokemon {
             multiplicador = 1.0;
 
         }
-
+        // Mostramos informacion antes y despues de cada ataque y setemos la vida en base a la vida que le quedaba y daño del pokemon que use el meotodo*multiplicador
         System.out.println(this.toString());
         System.out.println(pokemon.toString());
         pokemon.setVida(pokemon.getVida() - (this.getPoderAtaque() * multiplicador));
