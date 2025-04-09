@@ -76,8 +76,7 @@ public class Main {
 
                 case 2: // Menu de meterse en la hierba para iniciar pelea
 
-                    // mostramos a que pokemon hemos elegido para pelear usando la variable
-                    // seleccion
+                    // mostramos a que pokemon hemos elegido para pelear usando la variable seleccion
                     System.out.println("Pokemon seleccionado para el combate " + listaPokemon.get(seleccion).getNombre());
                     System.out.println("Buscando POKEMONES en la hierba.......");
 
@@ -102,12 +101,11 @@ public class Main {
                     opcion2 = 1;
 
                     while (opcion2 != 0) {
-                    // leemos lo que ha marcado el usuario, mientras no sea 0
-                    opcion2 = scanner.nextInt();
+                        // leemos lo que ha marcado el usuario, mientras no sea 0
+                        opcion2 = scanner.nextInt();
 
                         switch (opcion2) {
-                            case 1:// en caso de elegir uno Atacamos al otro Pokemon
-                                   // llamamos a la funcion atacar y atacamos a un Pokemonm de ListaPokemonMundo
+                            case 1:// en caso de elegir uno Atacamos al otro Pokemon llamamos a la funcion atacar y atacamos a un Pokemonm de ListaPokemonMundo
                                 listaPokemon.get(seleccion).atacar(listaPokemonMundo.get(randomNum));
                                 // si la vida del Pokemon es menor o igual 0, imprimimos mensaje y lo eliminamos
                                 if (listaPokemonMundo.get(randomNum).getVida() <= 0) {
