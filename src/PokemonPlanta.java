@@ -21,6 +21,12 @@ public class PokemonPlanta extends Pokemon {
 
         double multiplicador = 1;
 
+
+        /*
+         * El daño se calcula dependiendo del Tipo de pokemon que ataque
+         * PokemonPlanta VS PokemonAgua (20% de daño más)
+         */
+
         if (pokemon.getClass().getName() == "PokemonFuego") {
             multiplicador = 1.0;
 

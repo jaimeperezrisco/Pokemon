@@ -1,17 +1,15 @@
 
-public abstract class Pokemon implements Ataque{
+public abstract class Pokemon implements Ataque {
 
-    //atributos
+    // atributos
     private String nombre;
     private int nivel;
     private double vida;
     private double vidaMaxima;
     private int poderAtaque;
-    
-    //metodos Revisar el toString
 
-
-   public Pokemon(String nombre, int nivel, double vida, double vidaMaxima, int poderAtaque) {
+    // Constructor con parametros
+    public Pokemon(String nombre, int nivel, double vida, double vidaMaxima, int poderAtaque) {
         this.nombre = nombre;
         this.nivel = nivel;
         this.vida = vida;
@@ -19,7 +17,8 @@ public abstract class Pokemon implements Ataque{
         this.poderAtaque = poderAtaque;
     }
 
-   public String getNombre() {
+    //getters y setters
+    public String getNombre() {
         return nombre;
     }
 
@@ -59,15 +58,12 @@ public abstract class Pokemon implements Ataque{
         this.poderAtaque = poderAtaque;
     }
 
+    // metodos
 
-    //metodos
+    public String toString() {
+        return "Soy un Pokemon";
+    }
 
-   public String toString() {
-       return "Soy un Pokemon";
-   }
-    
-   public abstract void sonido();
-
-   
+    public abstract void sonido();
 
 }

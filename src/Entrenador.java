@@ -20,14 +20,15 @@ public class Entrenador {
     public boolean capturar(ArrayList<Pokemon> listaPokemon, ArrayList<Pokemon> listaPokemonMundo, int index) {
         if (listaPokemonMundo.isEmpty()) {
             System.out.println("No se puede quedan no Pokemons por capturar");
-            return false;} 
+            return false;
+        }
         int numeroPokeballs = this.getPokeball();
         if (numeroPokeballs == 0) {
             System.out.println("No puedes capturar más pokemons, te quedan 0 Pokeballs");
             return false;
         }
         pokeball--;
-        
+
         double probabilidadPokeball = 0.5;
         Pokemon pokemon = listaPokemonMundo.get(index);
         double probabilidadCaputura = probabilidadPokeball * (pokemon.getVida() / pokemon.getVidaMaxima());
