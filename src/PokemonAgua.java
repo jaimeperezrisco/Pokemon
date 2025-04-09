@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class PokemonAgua extends Pokemon{
     //constructor PokemonAgua
     public PokemonAgua(String nombre, int nivel, double vida, double vidaMaxima, int poderAtaque) {

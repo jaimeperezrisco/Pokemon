@@ -4,9 +4,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        int opcion;
-        int seleccion = 0;
-        int seleccionAtaque = 0;
+        int opcion; //opcion del switch
+        int opcion2;
+        int seleccion = 0; // variable de seleccion de elegir pokemon (caso1)
+        int seleccionAtaque = 0; // variable de seleccion de elegir pokemon (caso2)
         int seleccionCapturar = 0;
 
         // Tipo Fuego
@@ -28,7 +29,6 @@ public class Main {
 
         PokemonPlanta Bulbasur = new PokemonPlanta("Bulbasur", 10, 100, 100, 15);
         PokemonPlanta Venusaur = new PokemonPlanta("Venusaur", 65, 100, 100, 32);
-        PokemonPlanta Victreebel = new PokemonPlanta("Victreebel", 55, 100, 100, 30);
 
         // Entrenador
         Entrenador JaimeKetchup = new Entrenador();
@@ -52,6 +52,8 @@ public class Main {
         listaPokemon.add(Squirtle); // index 5
 
         // pelea fuego vs planta
+
+        /*
         System.out.println("Combate entre " + Charizar.getNombre() + " y " + Venusaur.getNombre());
         System.out.println(Charizar);
         System.out.println(Venusaur);
@@ -60,44 +62,13 @@ public class Main {
         Charizar.atacar(Venusaur);
         System.out.println(Charizar);
         System.out.println(Venusaur);
-
-        /*
-         * System.out.println(listaPokemon.get(0));
-         * System.out.println(listaPokemonMundo.get(0));
-         * 
-         * System.out.println();
-         * 
-         * // planta vs agua
-         * System.out.println(
-         * "Combate entre " + listaPokemon.get(4).getNombre() + " y " +
-         * listaPokemonMundo.get(0).getNombre());
-         * 
-         * System.out.println(listaPokemon.get(4));
-         * System.out.println(listaPokemonMundo.get(0));
-         * 
-         * listaPokemon.get(4).atacar(listaPokemonMundo.get(0));
-         * 
-         * System.out.println(listaPokemon.get(4));
-         * System.out.println(listaPokemonMundo.get(0));
-         * 
-         * listaPokemon.get(4).atacar(listaPokemonMundo.get(0));
-         * 
-         * System.out.println(listaPokemon.get(4));
-         * System.out.println(listaPokemonMundo.get(0));
-         * 
-         * listaPokemon.get(4).atacar(listaPokemonMundo.get(0));
-         * 
-         * System.out.println(listaPokemon.get(4));
-         * System.out.println(listaPokemonMundo.get(0));
-         */
-        // Captura
-        // JaimeKetchup.añadirPokedex(JaimeKetchup, listaPokemon, listaPokemonMundo, 0);
-
+        */
+        
         do {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Hola JaimeKetchup!!! Que quieres hacer?? ");
             System.out.println("1) Elige un pokemon");
-            System.out.println("2) Atacar");
+            System.out.println("2) Meterse en la hierba");
             System.out.println("3) Capturar");
             System.out.println("0) Escapar");
 
@@ -120,33 +91,67 @@ public class Main {
                     System.out.println("Perfecto!!! Has seleccionado a " + listaPokemon.get(seleccion).getNombre()
                             + " para pelear");
                     break;
-                case 2: // atacar
-                    System.out.println("Has seleccionado a " + listaPokemon.get(seleccion).getNombre());
-                    System.out.println("A que Pokemon quieres atacar");
+                case 2: // menu atacar
+                    System.out.println("Pokemon seleccionado para el combate " + listaPokemon.get(seleccion).getNombre());
+                    System.out.println("Buscando POKEMONES en la hierba.......");
+                    System.out.println("Cargando comabte.......");
+                    
+                    //generamos numero aleatorio https://www.w3api.com/Java/Math/random/
+                    int randomNum = (int) (Math.random() * listaPokemonMundo.size());
+                    System.out.println("Has encontrado a un " + listaPokemonMundo.get(randomNum).getNombre() + " para pelear!!!");
+
+                    System.out.println("¡¡¡¡HA COMENZADO EL COMBATE ENTRE " + listaPokemon.get(seleccion).getNombre() + " VS " + listaPokemonMundo.get(randomNum).getNombre() + "!!!!");
                     System.out.println();
+                    System.out.println("Controles: Pulsa 1 para atacar, 2 para capturar y 0 para salir");
+                   
+                    do {
+                        
+                        opcion2 = scanner.nextInt();
+                        switch (opcion2) {
+                            case 1://opcion de ataque
+                                listaPokemon.get(seleccion).atacar(listaPokemonMundo.get(randomNum));
 
-                    for (int i = 0; i < listaPokemonMundo.size(); i++) {
-                        System.out.println((i + 1) + " " + (listaPokemonMundo.get(i)));
 
-                    }
-                    seleccionAtaque = scanner.nextInt();
-                    seleccionAtaque = seleccionAtaque - 1;
+                                if (listaPokemonMundo.get(randomNum).getVida() <= 0) {
+                                    System.out.println("Has matado a " + listaPokemonMundo.get(randomNum).getNombre()
+                                            + "!!! y se ha eliminado de la lista");
+                                    listaPokemonMundo.remove(randomNum);
+                                    System.out.println("-----------------------------------------------");
+                                    opcion2=0;
+                                    break;
+                                }
+            
+                                break;
+                        
+                            case 2://opcion capturar
+                                System.out.println("Has lanzado una POKEBALL");
 
-                    System.out.println("Has seleccionado a " + listaPokemonMundo.get(seleccionAtaque).getNombre()
-                            + " para que le ataquen");
+                                JaimeKetchup.capturar(listaPokemon, listaPokemonMundo, randomNum);
 
-                    listaPokemon.get(seleccion).atacar(listaPokemonMundo.get(seleccionAtaque));
+                                
+                               //FALTA AQUI CORREGIR EL OPCION2 PARA QUE VAYA BIEN
+                
+                            
+                                System.out.println("--------------------------");
+                                opcion2=0;
+                                break;
 
-                    if (listaPokemonMundo.get(seleccionAtaque).getVida() <= 0) {
-                        System.out.println("Has matado a " + listaPokemonMundo.get(seleccionAtaque).getNombre()
-                                + "!!! y se ha eliminado de la lista");
-                        listaPokemonMundo.remove(seleccionAtaque);
-                    }
+                            case 3:
+                                System.out.println("Han huido los POKEMONES");
+                                break;
+                            default:
+                                break;
+                        }
+                        
+                    } while (opcion2!=0);
+                    
+
+
+                  
 
                     break;
-                case 3: // capturar
-                    System.out.println(
-                            "A que Pokemon quieres capturar (Cuanta menos vida tenga el pokemon más probabilidades)");
+                case 3: //capturar
+                    System.out.println("A que Pokemon quieres capturar (Cuanta menos vida tenga el pokemon más probabilidades)");
 
                     for (int i = 0; i < listaPokemonMundo.size(); i++) {
                         System.out.println((i + 1) + " " + (listaPokemonMundo.get(i)));
