@@ -17,7 +17,7 @@ public abstract class Pokemon implements Ataque {
         this.poderAtaque = poderAtaque;
     }
 
-    //getters y setters
+    //getters y setters para acceder ya que son privados
     public String getNombre() {
         return nombre;
     }

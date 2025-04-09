@@ -47,8 +47,7 @@ public class Main {
         listaPokemon.add(Bulbasur); // index 4
         listaPokemon.add(Squirtle); // index 5
 
-        // Bucle principal donde el elegimos la opcion del menu se ejecuta hasta que
-        // selecciones 0
+        // Bucle principal donde el elegimos la opcion del menu se ejecuta hasta que selecciones 0
         do {
             Scanner scanner = new Scanner(System.in);
             // opciones del menu
@@ -72,16 +71,14 @@ public class Main {
                     // seleccionamos una opcion de la lista y la guardamos en una variable
                     seleccion = scanner.nextInt();
                     seleccion = seleccion - 1;
-                    System.out.println("Perfecto!!! Has seleccionado a " + listaPokemon.get(seleccion).getNombre()
-                            + " para pelear");
+                    System.out.println("Perfecto!!! Has seleccionado a " + listaPokemon.get(seleccion).getNombre() + " para pelear");
                     break;
 
                 case 2: // Menu de meterse en la hierba para iniciar pelea
 
                     // mostramos a que pokemon hemos elegido para pelear usando la variable
                     // seleccion
-                    System.out
-                            .println("Pokemon seleccionado para el combate " + listaPokemon.get(seleccion).getNombre());
+                    System.out.println("Pokemon seleccionado para el combate " + listaPokemon.get(seleccion).getNombre());
                     System.out.println("Buscando POKEMONES en la hierba.......");
 
                     if (listaPokemonMundo.isEmpty()) {
@@ -95,21 +92,18 @@ public class Main {
                      * Y seleccionamos un pokemon de la listapokemon en base a nº aleatorio
                      */
                     int randomNum = (int) (Math.random() * listaPokemonMundo.size());
-                    System.out.println(
-                            "Has encontrado a un " + listaPokemonMundo.get(randomNum).getNombre() + " para pelear!!!");
-                    System.out.println("¡¡¡¡HA COMENZADO EL COMBATE ENTRE " + listaPokemon.get(seleccion).getNombre()
-                            + " VS " + listaPokemonMundo.get(randomNum).getNombre() + "!!!!");
+                    System.out.println("Has encontrado a un " + listaPokemonMundo.get(randomNum).getNombre() + " para pelear!!!");
+                    System.out.println("¡¡¡¡HA COMENZADO EL COMBATE ENTRE " + listaPokemon.get(seleccion).getNombre() + " VS " + listaPokemonMundo.get(randomNum).getNombre() + "!!!!");
                     System.out.println();
                     // Mostramos el menu de opciones del la pelea
                     System.out.println("Controles: Pulsa 1 para atacar, 2 para capturar y 0 para salir");
 
-                    // inicializamos opcion antes del bucle si no muestra el 1º menu en un 2º
-                    // combate
+                    // inicializamos opcion antes del bucle si no muestra el 1º menu en un 2º combate
                     opcion2 = 1;
 
                     while (opcion2 != 0) {
-                        // leemos lo que ha marcado el usuario, mientras no sea 0
-                        opcion2 = scanner.nextInt();
+                    // leemos lo que ha marcado el usuario, mientras no sea 0
+                    opcion2 = scanner.nextInt();
 
                         switch (opcion2) {
                             case 1:// en caso de elegir uno Atacamos al otro Pokemon
@@ -128,10 +122,9 @@ public class Main {
                             case 2:// en caso de elegir dos intentamos capturar al otro Pokemon
 
                                 // imprimimos mensaje, ejecutamos el metodo capturar y en caso de que se cumpla
-                                // salimos del combate hacia el menu principal en caso de capture al pokemon
                                 System.out.println("Has lanzado una POKEBALL");
                                 if (JaimeKetchup.capturar(listaPokemon, listaPokemonMundo, randomNum) == true) {
-                                    opcion2 = 0; //salimos del menu de combate si se cumple la condicion
+                                    opcion2 = 0; // salimos del menu de combate si se cumple la condicion
                                 }
                                 System.out.println("--------------------------");
                                 ;

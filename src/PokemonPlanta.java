@@ -1,8 +1,7 @@
 public class PokemonPlanta extends Pokemon {
-    // atributos
-
     // constructor
     public PokemonPlanta(String nombre, int nivel, double vida, double vidaMaxima, int poderAtaque) {
+        // llamamos al constructor de la clase padre (Pokemon)
         super(nombre, nivel, vida, vidaMaxima, poderAtaque);
     }
 
@@ -15,7 +14,7 @@ public class PokemonPlanta extends Pokemon {
     public void sonido() {
         System.out.println("Soy un pokemon tipo planta y sueno así");
     }
-
+    //sobreescribimos metodo atacar adaptandolo a la clase
     @Override
     public void atacar(Pokemon pokemon) {
 

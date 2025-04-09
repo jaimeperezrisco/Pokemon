@@ -1,7 +1,7 @@
 public class PokemonFuego extends Pokemon {
-    // atrbutos
-
+    
     public PokemonFuego(String nombre, int nivel, double vida, double vidaMaxima, int poderAtaque) {
+        // llamamos al constructor de la clase padre (Pokemon)
         super(nombre, nivel, vida, vidaMaxima, poderAtaque);
     }
 
@@ -15,6 +15,7 @@ public class PokemonFuego extends Pokemon {
         System.out.println("Soy un pokemon tipo fuego y sueno así");
     }
 
+    // sobreescribimos metodo atacar adaptandolo a la clase
     @Override
     public void atacar(Pokemon pokemon) {
         double multiplicador = 1;
